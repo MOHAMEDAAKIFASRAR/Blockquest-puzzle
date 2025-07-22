@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maze Game - Ultimate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Main Menu -->
+  <div id="menuScreen" class="screen">
+    <h1>🌟 BLOCKCHAIN BASED PUZZLE-GAME 🌟</h1>
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="showLevelSelect()">Select Level</button>
+    <button onclick="showLeaderboard()">🏆 Leaderboard</button>
+    <button id="connectWalletBtn">🔗 Connect Wallet</button>
+<p id="walletAddress">Not connected</p>
+<button id="submitScoreBtn" disabled>⛓ Submit Score</button>
+
+  </div>
+
+  <!-- Level Selector -->
+  <div id="levelScreen" class="screen hidden">
+    <h2>Select Level</h2>
+    <div id="levelButtons"></div>
+    <button onclick="showMenu()">Back</button>
+  </div>
+
+  <!-- Leaderboard -->
+  <!-- Leaderboard -->
+<div id="leaderboardScreen" class="screen hidden">
+  <h2>🏆 Leaderboard 🏆</h2>
+  <div id="leaderboardList" style="overflow-x: auto; margin-top: 10px;"></div>
+  <button onclick="showMenu()">Back</button>
+</div>
+
+
+  <!-- Game -->
+  <div id="gameScreen" class="screen hidden">
+    <h2 id="levelTitle">Level: 1</h2>
+    <canvas id="mazeCanvas" width="600" height="600"></canvas>
+    <p id="timer">Time: 0s</p>
+    <p id="best">Best Time: -</p>
+    <button onclick="showMenu()">Exit to Menu</button>
+  </div>
+
+  <audio id="winSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="moveSound" src="https://actions.google.com/sounds/v1/foley/button_click.ogg"></audio>
+
+  <!-- Ethers.js for blockchain interaction -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

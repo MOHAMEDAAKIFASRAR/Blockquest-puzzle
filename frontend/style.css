@@ -1,0 +1,227 @@
+/* Background gradient for depth */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom, #000010, #001830);
+  color: #00fff7;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  
+}
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-in;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.screen.active {
+  display: flex;
+}
+
+
+
+h1, h2 {
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  animation: pulse 2s infinite alternate;
+
+}
+button {
+  background: rgba(0, 255, 247, 0.1);
+  border: 2px solid #00fff7;
+  color: #00fff7;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 5px #00fff7;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+}
+
+button:hover:not(:disabled) {
+  background: #00fff7;
+  color: #000;
+  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  transform: scale(1.05);
+}
+
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #555;
+}
+#mazeCanvas {
+  border: 3px solid #00fff7;
+  box-shadow: 0 0 15px #00fff7;
+  margin-bottom: 15px;
+}
+canvas {
+  background: #000;
+  border: 5px solid #00fff7;
+  border-radius: 15px;
+  box-shadow: 0 0 40px #00fff7;
+  margin: 20px 0;
+}
+
+#timer, #best {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+#levelTitle {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #00fff7;
+}
+
+#leaderboardList, #levelButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#leaderboardList p {
+  margin: 5px 20px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+#walletAddress {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #00fff7;
+}
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #00fff7;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Animation effects */
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+  }
+  to {
+    text-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Title animation */
+#menuScreen h1 {
+  font-size: 2.2rem;
+  animation: glowIntro 2.5s ease-in-out;
+}
+#menuScreen button {
+  font-size: 1.1rem;
+  padding: 12px 24px;
+}
+
+@keyframes glowIntro {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#menuScreen {
+  padding: 40px 60px;
+  max-width: 600px;
+  width: 90%;
+  background-color: rgba(0,255,247,0.05);
+  border: 2px solid #00fff7;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #00fff7;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+   height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 255, 247, 0.02) 0px,
+    rgba(0, 255, 247, 0.02) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0, 255, 247, 0.05) 0 2px, transparent 2px 20px),
+    repeating-linear-gradient(90deg, rgba(0, 255, 247, 0.05) 0 2px, transparent 2px 20px);
+  animation: mazeScroll 10s linear infinite;
+  
+}
+@keyframes mazeScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 200px;
+  }
+}
+canvas {
+  background: #000;
+  border: 5px solid #00fff7;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #00fff7, 0 0 60px #00fff7;
+  margin: 20px 0;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+canvas:hover {
+  box-shadow: 0 0 60px #00fff7, 0 0 90px #00fff7;
+}
