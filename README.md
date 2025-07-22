@@ -1,4 +1,4 @@
-## ON-CHAIN PUZZLE GAME WITH LEADERBOARD
+# ON-CHAIN PUZZLE GAME WITH LEADERBOARD
 
 ## Description:
 
@@ -21,24 +21,24 @@ A futuristic Web3 puzzle game where players solve randomly generated mazes and s
 - 📊 Leaderboard (stored on-chain)
 - 🔄 Supports multiple wallet accounts
 
-## SET-UP INSTRUCTIONS:
-# 1. Clone the repository:
+# SET-UP INSTRUCTIONS:
+## 1. Clone the repository:
 
-git clone https://github.com/your-MOHAMEDAAKIFASRAR/blockmaze.git
+git clone https://github.com/MOHAMEDAAKIFASRAR/Blockquest-puzzle.git
 
-# 2. Start Ganache (Private Blockchain)
+## 2. Start Ganache (Private Blockchain)
 Open Ganache GUI or run: ganache --chain.chainId 1337
 
-# 3. Deploy Smart Contract
+## 3. Deploy Smart Contract
 npx hardhat compile
 npx hardhat run scripts/deploy.js --network localhost
-# 4. Run Frontend
+## 4. Run Frontend
 Just open frontend/public/game/game.html in your browser (served via Live Server or directly).
 Make sure MetaMask is connected to http://127.0.0.1:7545 with chain ID 1337.
 
 
 
-### Screenshots (Demo):
+## Screenshots (Demo):
 ![alt text](IMG1.jpg)
 ![alt text](IMG2.jpg)
 
